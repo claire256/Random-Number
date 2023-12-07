@@ -16,9 +16,9 @@ function checkGuessedNumber(){
       } else if (inputGuess === randomNumber) {
         document.getElementById("output").textContent = `Congratulations! You guessed the correct number ${randomNumber} in ${tries} attempts.`;
       } else if (inputGuess < randomNumber) {
-        document.getElementById("output").textContent = "Too low! Try again.";
+        document.getElementById("output").textContent = "Number is too low! Try again.";
       } else {
-        document.getElementById("output").textContent = "Too high! Try again.";
+        document.getElementById("output").textContent = "Number is too high! Try again.";
       }
       
       userInput.value = "";
