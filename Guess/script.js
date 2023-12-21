@@ -1,25 +1,29 @@
-// Random number between 1 and 100
+// // Random number between 1 and 100
 
-const randomNumber = 1+ Math.floor(100*Math.random())
 
-let tries = 0
-
-function checkGuessedNumber(){
+function checkGuessedNumber(guessNumber){
   
-    const userInput = document.getElementById("inputGuess")
-    const inputGuess = parseInt(userInput.value);
-    
-    tries++
+  const randomNumber = 1+ Math.floor(100*Math.random())
+    console.log('randoooo',randomNumber)
 
-    if (isNaN(inputGuess) || inputGuess < 1 || inputGuess > 100) {
-        document.getElementById("output").textContent = "Please enter a valid number between 1 and 100.";
-      } else if (inputGuess === randomNumber) {
-        document.getElementById("output").textContent = `Congratulations! You guessed the correct number ${randomNumber} in ${tries} attempts.`;
-      } else if (inputGuess < randomNumber) {
-        document.getElementById("output").textContent = "Number is too low! Try again.";
-      } else {
-        document.getElementById("output").textContent = "Number is too high! Try again.";
+    if (isNaN(guessNumber) || guessNumber < 1 || guessNumber > 100) {
+        return("Please enter a valid number between 1 and 100.")
       }
-      
-      userInput.value = "";
+       else if (guessNumber === randomNumber) {
+        return(`Congratulations! You guessed the correct number ${randomNumber}`)
+      } 
+      else if (guessNumber < randomNumber){
+        return("Number is too low! Try again.")
+      } 
+      else {
+        return("Number is too high! Try again.")
+      }
 }
+ 
+console.log(checkGuessedNumber(10))
+
+
+
+
+
+
